@@ -26,6 +26,7 @@ import SubscriberLayout from './components/layout/SubscriberLayout';
 import SubscriberDashboard from './pages/subscriber/Dashboard';
 import Subscription from './pages/subscriber/Subscription';
 import Billing from './pages/subscriber/Billing';
+import PlanSelection from './pages/subscriber/PlanSelection';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -46,6 +47,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/plans" element={<PlanSelection />} />
             
             {/* Admin routes */}
             <Route path="/admin" element={

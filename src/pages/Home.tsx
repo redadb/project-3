@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, Star, Users, Shield, Zap } from 'lucide-react';
 import Button from '../components/ui/Button';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function Home() {
+  const { loginAsAdmin, loginAsUser } = useAuth();
+
   const features = [
     {
       icon: Users,
@@ -85,6 +88,24 @@ export default function Home() {
               <Link to="/register">
                 <Button>Get Started</Button>
               </Link>
+            </div>
+            
+            {/* Temporary Access Buttons - Remove when database is connected */}
+            <div className="flex items-center space-x-2 ml-4 pl-4 border-l border-gray-300">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={loginAsAdmin}
+              >
+                Demo Admin
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={loginAsUser}
+              >
+                Demo User
+              </Button>
             </div>
           </div>
         </div>
